@@ -10,13 +10,15 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "Usuario")
+@Entity(name = "usuario")
 public class UsuarioModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(unique = true)
+    private String nome;
+    private String email;
     private String login;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
